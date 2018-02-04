@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- parent relativeLayout -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soccer">
+
+    <!-- Team names -->
+
+    <TextView
+        android:id="@+id/team_1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="@string/team1"
+        android:textAllCaps="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/team_2_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="@string/team2"
+        android:textAllCaps="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#000000" />
+
+    <View
+        android:id="@+id/points_horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/team_1_title"
+        android:layout_marginVertical="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- Score (RL) -->
+
+    <RelativeLayout
+        android:id="@+id/pointsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/points_horizontal_line"
+        android:layout_gravity="start"
+        android:layout_marginVertical="8dp">
+
+        <Button
+            android:id="@+id/team1_plus_score"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:autoSizeTextType="uniform"
+            android:onClick="add1ToTeam1Score"
+            android:text="@string/plus"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/team_1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_toRightOf="@id/team1_plus_score"
+            android:fontFamily="sans-serif"
+            android:text="@string/zero"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/scores"
+            android:textAllCaps="true"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/team2_plus_score"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:autoSizeTextType="uniform"
+            android:onClick="add1ToTeam2Score"
+            android:text="@string/plus" />
+
+        <TextView
+            android:id="@+id/team_2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_toLeftOf="@id/team2_plus_score"
+            android:fontFamily="sans-serif"
+            android:text="@string/zero"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <!-- horizontal grey line-->
+
+    <View
+        android:id="@+id/fouls_horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/pointsLayout"
+        android:background="@android:color/darker_gray" />
+
+    <!-- Fouls (RL) -->
+
+    <RelativeLayout
+        android:id="@+id/foulsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fouls_horizontal_line"
+        android:layout_gravity="start"
+        android:layout_marginVertical="8dp">
+
+        <Button
+            android:id="@+id/team1_plus_fouls"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:autoSizeTextType="uniform"
+            android:onClick="add1ToTeam1Fouls"
+            android:text="@string/plus"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/team_1_fouls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_toRightOf="@id/team1_plus_fouls"
+            android:fontFamily="sans-serif"
+            android:text="@string/zero"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/fouls"
+            android:textAllCaps="true"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/team2_plus_fouls"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:autoSizeTextType="uniform"
+            android:onClick="add1ToTeam2Fouls"
+            android:text="@string/plus" />
+
+        <TextView
+            android:id="@+id/team_2_fouls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_toLeftOf="@id/team2_plus_fouls"
+            android:fontFamily="sans-serif"
+            android:text="@string/zero"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <!-- horizontal grey line-->
+
+    <View
+        android:id="@+id/offsides_horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/foulsLayout"
+        android:background="@android:color/darker_gray" />
+
+
+    <!-- Reset button -->
+
+    <Button
+        android:id="@+id/Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="32dp"
+        android:onClick="resetScore"
+        android:text="Reset" />
+
+</RelativeLayout>
